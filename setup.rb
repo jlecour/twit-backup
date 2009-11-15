@@ -1,9 +1,13 @@
+#!/usr/bin/env ruby
+
 require 'rubygems'
 require 'twitter'
 require 'pp'
 require 'config_store'
 
-config = ConfigStore.new("#{ENV['HOME']}/.twitter")
+config_file = File.join(ENV['HOME'], '.twitter')
+
+config = ConfigStore.new(config_file)
 oauth = Twitter::OAuth.new(config['token'], config['secret'])
 
 if config['atoken'] && config['asecret']

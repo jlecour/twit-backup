@@ -1,8 +1,15 @@
+#!/usr/bin/env ruby
+
 require 'rubygems'
 require 'twitter'
 require 'config_store'
 require 'time'
 require 'fileutils'
+
+base_dir = File.expand_path File.join(ENV['HOME'], 'twit-backup')
+config_file = File.join(ENV['HOME'], '.twitter')
+backup_file = File.join(base_dir, 'timeline.txt')
+lastid_file = File.join(base_dir, '.lastid')
 
 def check_dir(dir)
   FileUtils.mkdir_p(dir) unless File.directory?(dir)
@@ -24,12 +31,9 @@ def format_tweet(tweet)
   res.join(' ')
 end
 
-base_dir = File.expand_path File.join('~', 'Documents', 'twit-backup')
 check_dir(base_dir)
-backup_file = File.join(base_dir, 'timeline.txt')
-lastid_file = File.join(base_dir, '.lastid')
 
-config = ConfigStore.new("#{ENV['HOME']}/.twitter")
+config = ConfigStore.new(config_file)
 
 oauth = Twitter::OAuth.new(config['token'], config['secret'])
 oauth.authorize_from_access(config['atoken'], config['asecret'])
