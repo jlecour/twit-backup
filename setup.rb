@@ -3,7 +3,7 @@
 require 'rubygems'
 require 'twitter'
 require 'pp'
-require 'config_store'
+require File.join File.dirname(__FILE__), 'config_store'
 
 config_file = File.join(ENV['HOME'], '.twitter')
 

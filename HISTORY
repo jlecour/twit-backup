@@ -1,3 +1,8 @@
+== 0.1.1 / 2009-11-15
+
+* change some formatting in the backup file
+* explicit path to require the config_store file
+
 == 0.1.0 / 2009-11-15
 
 * OAuth authentication

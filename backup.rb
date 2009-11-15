@@ -2,9 +2,9 @@
 
 require 'rubygems'
 require 'twitter'
-require 'config_store'
 require 'time'
 require 'fileutils'
+require File.join File.dirname(__FILE__), 'config_store'
 
 base_dir = File.expand_path File.join(ENV['HOME'], 'twit-backup')
 config_file = File.join(ENV['HOME'], '.twitter')
@@ -25,7 +25,7 @@ end
 def format_tweet(tweet)
   res = []
   res << Time.parse(tweet.created_at).strftime('%Y-%d-%m %T')
-  res << tweet.user.screen_name
+  res << "@" + tweet.user.screen_name + ":"
   res << tweet.text
   res << '[' + tweet.id.to_s + ']'
   res.join(' ')
