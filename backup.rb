@@ -24,7 +24,7 @@ end
 
 def format_tweet(tweet)
   res = []
-  res << Time.parse(tweet.created_at).strftime('%Y-%d-%m %T')
+  res << Time.parse(tweet.created_at).strftime('%Y-%m-%d %T')
   res << "@" + tweet.user.screen_name + ":"
   res << tweet.text
   res << '[' + tweet.id.to_s + ']'
