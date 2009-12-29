@@ -35,7 +35,7 @@ To backup the last 200 tweets in your timeline, you just have to execute the bac
 
     ruby backup.rb
 
-It will download the tweets and write them into the backup file. If this backup file exceeds 10 MB, it is rotated and a new file is created.
+It will download the tweets and write them into the backup file. If this backup file exceeds 1 MB, it is rotated and a new file is created.
 
 Remember that you have a rate limit with the Twitter API, so don't execute the backup script too often. Once an hour seems to be a good rate, at least if you don't have more than 200 tweets in an hour.
 
