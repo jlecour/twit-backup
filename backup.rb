@@ -42,7 +42,7 @@ twitter = Twitter::Base.new(oauth)
 
 lastid = File.readlines(lastid_file)[0].split.first.to_i rescue nil
 
-rotate_file_if_too_big backup_file, 10*1024
+rotate_file_if_too_big backup_file, 1*1024*1024
 
 options = {}
 options[:count] = 200
