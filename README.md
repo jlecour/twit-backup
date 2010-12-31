@@ -1,4 +1,4 @@
-Twit-backup
+Twit-backup ![Project Status](http://stillmaintained.com/jlecour/twit-backup.png)
 ===========
 
 Twit-backup is a little script, written in Ruby, to backup a user's Twitter timeline.
